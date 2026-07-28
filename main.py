@@ -65,7 +65,7 @@ while True:
    elif user_input == 3:
       for expense in Data:
          total += expense['money_spent']
-      print(f"this is the total money you spent {total}")
+      print(f"This is the total money you spent {total}")
 
    #exiting the loop
 
