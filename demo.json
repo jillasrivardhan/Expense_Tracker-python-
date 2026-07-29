@@ -22,5 +22,37 @@
         ],
         "money_spent": 1250.0,
         "description": "hot and spicy"
+    },
+    {
+        "Date": "2005-11-09T00:00:00",
+        "Item": [
+            "snacks"
+        ],
+        "money_spent": 2000.0,
+        "description": "it was a bdy party"
+    },
+    {
+        "Date": "1975-12-01T00:00:00",
+        "Item": [
+            "eggs"
+        ],
+        "money_spent": 4350.0,
+        "description": "it was a shop opening"
+    },
+    {
+        "Date": "1983-09-12T00:00:00",
+        "Item": [
+            "manchuriya"
+        ],
+        "money_spent": 1200.0,
+        "description": "hot & spicy"
+    },
+    {
+        "Date": "2206-11-12T00:00:00",
+        "Item": [
+            "noodles"
+        ],
+        "money_spent": 1200.0,
+        "description": "wow"
     }
 ]

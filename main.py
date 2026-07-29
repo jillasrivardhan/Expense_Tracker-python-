@@ -3,7 +3,11 @@ import json
 
 print(" WELCOME TO MY EXPENSE TRACKER ")
 
+amount_balance = 10000
+
 while True:
+
+
 
 #==================================
         # welcome menu 
@@ -15,8 +19,12 @@ while True:
    print("3. View total expense")
    print("4. Exit")
 
+   
+   
    user_input = int(input("Enter a choice: "))
    total = 0
+
+   
 #==================================
       # adding the expenses
 #==================================
@@ -27,7 +35,6 @@ while True:
 #==================================
       while True:
          date = input("Enter date (DD-MM-YYYY): ")
-
          try:
           date = datetime.strptime(date, "%d-%m-%Y").isoformat()
           break
@@ -86,7 +93,8 @@ while True:
 
       for expense in Data:
          total += expense['money_spent']
-      print(f"This is the total money you spent {total}")
+      amount_balance -= total
+      print(f"This is the total money you spent: {total} and balance you have is: {amount_balance}")
 
 #==================================
          #exiting the loop
