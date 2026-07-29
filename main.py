@@ -1,16 +1,13 @@
 from datetime import datetime
 import json
 
-# load the data into a list
-
-# Data = []
-
 print(" WELCOME TO MY EXPENSE TRACKER ")
 
 while True:
 
-   # welcome menu 
-
+#==================================
+        # welcome menu 
+#==================================
    print(" ====== MENU =======")
    print("select any one option:")
    print("1.Add today's expense")
@@ -20,13 +17,14 @@ while True:
 
    user_input = int(input("Enter a choice: "))
    total = 0
-
-   # adding the expenses
-
+#==================================
+      # adding the expenses
+#==================================
    if user_input == 1:
 
-      #making sure user enter valid date
-
+#==================================
+ #making sure user enter valid date
+#==================================
       while True:
          date = input("Enter date (DD-MM-YYYY): ")
 
@@ -36,14 +34,16 @@ while True:
          except ValueError:
           print("Invalid date. Please try again.")
 
-      #other things user need to enter
-
+#==================================
+ #other things user need to enter
+#==================================
       on_what_did_you_spend = input("on what did you spend: ").split(",")
       money_spent = float(input("enter amount spent:$ "))
       description = input("feedback on what you spent: ")
 
-      # converting that user entered data into dictionary
-
+#===================================================
+# converting that user entered data into dictionary
+#===================================================
       data = {
          'Date':date,
          'Item':on_what_did_you_spend,
@@ -51,9 +51,9 @@ while True:
          'description':description
       }
 
-# appending into the list we made at first 
-
-
+#=====================================================
+# appending into the list we made at first using json
+#=====================================================
       try:
          with open('demo.json','r') as f:
             Data = json.load(f)
@@ -67,16 +67,18 @@ while True:
 
       print("thank you we received to data")
 
-   # showing the expenses that user made
-
+#=====================================
+# showing the expenses that user made
+#=====================================
    elif user_input == 2:
    
       with open('demo.json','r') as f:
          content = json.load(f)
       print(content)
 
+#==================================
 # calculating the total expenses
-
+#==================================
    elif user_input == 3:
 
       with open('demo.json','r') as f:
@@ -86,12 +88,14 @@ while True:
          total += expense['money_spent']
       print(f"This is the total money you spent {total}")
 
-   #exiting the loop
-
+#==================================
+         #exiting the loop
+#==================================
    elif user_input == 4:
       break
-   
-   #making sure user enter valid input
 
+#==================================   
+#making sure user enter valid input
+#==================================
    else:
       print("enter a valid input.(Between 1 & 4)")   
