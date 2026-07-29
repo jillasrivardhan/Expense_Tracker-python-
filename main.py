@@ -1,8 +1,9 @@
 from datetime import datetime
+import json
 
 # load the data into a list
 
-Data = []
+# Data = []
 
 print(" WELCOME TO MY EXPENSE TRACKER ")
 
@@ -30,7 +31,7 @@ while True:
          date = input("Enter date (DD-MM-YYYY): ")
 
          try:
-          date = datetime.strptime(date, "%d-%m-%Y")
+          date = datetime.strptime(date, "%d-%m-%Y").isoformat()
           break
          except ValueError:
           print("Invalid date. Please try again.")
@@ -49,20 +50,38 @@ while True:
          'money_spent':money_spent,
          'description':description
       }
-      # appending into the list we made at first 
+
+# appending into the list we made at first 
+
+
+      try:
+         with open('demo.json','r') as f:
+            Data = json.load(f)
+      except (FileNotFoundError,json.JSONDecodeError):
+         Data = []
 
       Data.append(data)
+
+      with open('demo.json','w') as f:
+         json.dump(Data,f,indent=4)
+
       print("thank you we received to data")
 
    # showing the expenses that user made
 
    elif user_input == 2:
-      for i in Data:
-         print(i)
+   
+      with open('demo.json','r') as f:
+         content = json.load(f)
+      print(content)
 
-   # calculating the total expenses
+# calculating the total expenses
 
    elif user_input == 3:
+
+      with open('demo.json','r') as f:
+               content = json.load(f)
+
       for expense in Data:
          total += expense['money_spent']
       print(f"This is the total money you spent {total}")

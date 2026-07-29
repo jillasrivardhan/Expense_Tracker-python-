@@ -1,0 +1,26 @@
+[
+    {
+        "Date": "2005-12-12T00:00:00",
+        "Item": [
+            "pizza"
+        ],
+        "money_spent": 1200.0,
+        "description": "nice"
+    },
+    {
+        "Date": "2009-10-12T00:00:00",
+        "Item": [
+            "burger"
+        ],
+        "money_spent": 1200.0,
+        "description": "hot"
+    },
+    {
+        "Date": "2010-10-10T00:00:00",
+        "Item": [
+            "biryani"
+        ],
+        "money_spent": 1250.0,
+        "description": "hot and spicy"
+    }
+]
