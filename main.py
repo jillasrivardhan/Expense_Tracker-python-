@@ -1,5 +1,6 @@
 from datetime import datetime
 import json
+from expense import view_expense_acc_to_month
 
 print(" WELCOME TO MY EXPENSE TRACKER ")
 
@@ -17,7 +18,8 @@ while True:
    print("1.Add today's expense")
    print("2.View all expense")
    print("3. View total expense")
-   print("4. Exit")
+   print("4. View total expense according to month")
+   print("5. Exit")
 
    
    
@@ -96,14 +98,20 @@ while True:
       amount_balance -= total
       print(f"This is the total money you spent: {total} and balance you have is: {amount_balance}")
 
+
+#====================================
+#viewing expense according to month
+#====================================
+   elif user_input == 4:
+      view_expense_acc_to_month()
 #==================================
          #exiting the loop
 #==================================
-   elif user_input == 4:
+   elif user_input == 5:
       break
 
 #==================================   
 #making sure user enter valid input
 #==================================
    else:
-      print("enter a valid input.(Between 1 & 4)")   
+      print("enter a valid input.(Between 1 & 5)")   
