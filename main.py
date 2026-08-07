@@ -1,10 +1,10 @@
 from datetime import date, datetime
 import json
 from month_expense import view_expense_acc_to_month
-from Date_validate import validate_date
-from Item_validate import validate_item
-from Money_validate import validate_money
-from feedback_validate import validate_feedback
+from validations.Date_validate import validate_date
+from validations.Item_validate import validate_item
+from validations.Money_validate import validate_money
+from validations.feedback_validate import validate_feedback
 
 print("********************* WELCOME TO MY EXPENSE TRACKER *************************")
 
