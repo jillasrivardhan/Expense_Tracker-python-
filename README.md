@@ -40,10 +40,48 @@ This project demonstrates practical Python concepts such as file handling, JSON 
 ```text
 Expense_Tracker-python/
 │
-├── main.py          # Main application
-├── demo.json        # Expense records
+├── main.py
+│   └── Main entry point of the Expense Tracker application
+│
+├── month_expense.py
+│   └── Handles monthly expense calculations and analysis
+│
+├── demo.json
+│   └── Stores expense records in JSON format
+│
+├── validations/
+│   ├── Date_validate.py
+│   │   └── Validates expense dates
+│   │
+│   ├── Item_validate.py
+│   │   └── Validates expense/item information
+│   │
+│   ├── Money_validate.py
+│   │   └── Validates expense amounts
+│   │
+│   └── feedback_validate.py
+│       └── Validates user feedback
+│
 └── README.md
+    └── Project documentation
 ```
+
+### 📌 File & Module Overview
+
+| File / Directory       | Description                                            |
+| ---------------------- | ------------------------------------------------------ |
+| `main.py`              | Main program that runs the Expense Tracker             |
+| `month_expense.py`     | Handles monthly expense-related operations             |
+| `demo.json`            | JSON file used for persistent expense storage          |
+| `validations/`         | Contains modules responsible for validating user input |
+| `Date_validate.py`     | Validates date input                                   |
+| `Item_validate.py`     | Validates expense/item input                           |
+| `Money_validate.py`    | Validates monetary values                              |
+| `feedback_validate.py` | Validates feedback input                               |
+| `README.md`            | Documentation and usage instructions                   |
+
+> **Note:** `__pycache__/` is intentionally excluded from the documented structure because Python generates it automatically when running the application. It should also generally be added to `.gitignore`.
+
 
 ---
 
