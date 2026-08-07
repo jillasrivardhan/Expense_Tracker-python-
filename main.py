@@ -2,6 +2,9 @@ from datetime import date, datetime
 import json
 from month_expense import view_expense_acc_to_month
 from Date_validate import validate_date
+from Item_validate import validate_item
+from Money_validate import validate_money
+from feedback_validate import validate_feedback
 
 print("********************* WELCOME TO MY EXPENSE TRACKER *************************")
 
@@ -12,17 +15,17 @@ while True:
 #==================================
         # welcome menu 
 #==================================
-   print(" ====== MENU =======")
+   print(" ============== MENU ================")
    print("select any one option:")
    print("1.Add today's expense")
    print("2.View all expense")
    print("3. View total expense")
    print("4. View total expense according to month")
    print("5. Exit")
-  
+
    user_input = int(input("Enter a choice: "))
    total = 0
-
+  
 #==================================
       # adding the expenses
 #==================================
@@ -32,27 +35,21 @@ while True:
  #making sure user enter valid date
 #==================================
 
-      x = validate_date()
-      # while True:
-      #    date = input("Enter date (DD-MM-YYYY): ")
-      #    try:
-      #     date = datetime.strptime(date, "%d-%m-%Y").isoformat()
-      #     break
-      #    except ValueError:
-      #     print("Invalid date. Please try again.")
+      date_time = validate_date()
+      
 
 #==================================
  #other things user need to enter
 #==================================
-      on_what_did_you_spend = input("on what did you spend: ").split(",")
-      money_spent = float(input("enter amount spent:$ "))
-      description = input("feedback on what you spent: ")
+      on_what_did_you_spend = validate_item()
+      money_spent = validate_money()
+      description = validate_feedback()
 
 #===================================================
 # converting that user entered data into dictionary
 #===================================================
       data = {
-         'Date':x,
+         'Date':date_time,
          'Item':on_what_did_you_spend,
          'money_spent':money_spent,
          'description':description

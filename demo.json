@@ -78,5 +78,11 @@
         ],
         "money_spent": 350.0,
         "description": "nice"
+    },
+    {
+        "Date": "2026-09-08T00:00:00",
+        "Item": "water",
+        "money_spent": 150.0,
+        "description": "nice"
     }
 ]
