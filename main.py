@@ -1,14 +1,13 @@
-from datetime import datetime
+from datetime import date, datetime
 import json
 from month_expense import view_expense_acc_to_month
+from Date_validate import validate_date
 
-print(" WELCOME TO MY EXPENSE TRACKER ")
+print("********************* WELCOME TO MY EXPENSE TRACKER *************************")
 
-amount_balance = 10000
+amount_balance = 100000
 
 while True:
-
-
 
 #==================================
         # welcome menu 
@@ -20,13 +19,10 @@ while True:
    print("3. View total expense")
    print("4. View total expense according to month")
    print("5. Exit")
-
-   
-   
+  
    user_input = int(input("Enter a choice: "))
    total = 0
 
-   
 #==================================
       # adding the expenses
 #==================================
@@ -35,13 +31,15 @@ while True:
 #==================================
  #making sure user enter valid date
 #==================================
-      while True:
-         date = input("Enter date (DD-MM-YYYY): ")
-         try:
-          date = datetime.strptime(date, "%d-%m-%Y").isoformat()
-          break
-         except ValueError:
-          print("Invalid date. Please try again.")
+
+      x = validate_date()
+      # while True:
+      #    date = input("Enter date (DD-MM-YYYY): ")
+      #    try:
+      #     date = datetime.strptime(date, "%d-%m-%Y").isoformat()
+      #     break
+      #    except ValueError:
+      #     print("Invalid date. Please try again.")
 
 #==================================
  #other things user need to enter
@@ -54,7 +52,7 @@ while True:
 # converting that user entered data into dictionary
 #===================================================
       data = {
-         'Date':date,
+         'Date':x,
          'Item':on_what_did_you_spend,
          'money_spent':money_spent,
          'description':description
@@ -74,7 +72,7 @@ while True:
       with open('demo.json','w') as f:
          json.dump(Data,f,indent=4)
 
-      print("thank you we received to data")
+      print("********************** THANK YOU WE RECEIVER YOUR DATA *********************************")
 
 #=====================================
 # showing the expenses that user made
@@ -93,7 +91,7 @@ while True:
       with open('demo.json','r') as f:
                content = json.load(f)
 
-      for expense in Data:
+      for expense in content:
          total += expense['money_spent']
       amount_balance -= total
       print(f"This is the total money you spent: {total} and balance you have is: {amount_balance}")
@@ -114,4 +112,4 @@ while True:
 #making sure user enter valid input
 #==================================
    else:
-      print("enter a valid input.(Between 1 & 5)")   
+      print("************ Enter a valid input.(Between 1 & 5) *****************")   
